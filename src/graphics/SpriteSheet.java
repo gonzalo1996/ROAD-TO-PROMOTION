@@ -20,8 +20,14 @@ public class SpriteSheet {
 	final private int widthSprites;
 	//alto Sprite
 	final private int tallSprites;
-
 	final private Sprite[] sprites;
+
+	//Inicio de coleccion de los Sprites
+/*
+	//TODO: falta agregar los recursos antes de inicial los sprites, de los personajes
+	public static SpriteSheet Boss= new SpriteSheet(final String path, final int spriteSide, final boolean opaqueSheet);
+*/
+	//Fin de la coleccion de los Sprites
 
 	//Le pasamos la ruta, donde esta la hoja de sprite, luego el lado del sprite y la hoja opacada
 	public SpriteSheet(final String path, final int spriteSide, final boolean opaqueSheet) {
