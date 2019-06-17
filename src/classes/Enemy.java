@@ -59,13 +59,14 @@ public class Enemy extends Player{
                 setHp( getHp() + getAPotionFromInventory());
                 break;
             case 2:
-                /*setDefense(getDefense() + getEquipment().getShieldInUse().use());*/
+                setDefense(getDefense() + getEquipment().getShieldInUse().use());
                 break;
             case 3:
-               /* getEquipment().getShieldInUse().use();*/
+               getEquipment().getShieldInUse().use();
                 break;
             case 4:
-                /*attack(Hero );*/
+                Player p=null;
+                attack(p);
                 break;
             case 5:
                 //Se mueve de forma aleatoria de las 3 posibilades 
