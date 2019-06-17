@@ -18,7 +18,7 @@ public class Main {
         //nombre del elemento
         //grado o jerarquia del elemento
         //HERO INVENTORY
-        Armor armor = new Armor("armor",EHierarchy.LEGENDARY,40);
+        /*Armor armor = new Armor("armor",EHierarchy.LEGENDARY,40);
         Potion potion = new Potion("potion",EHierarchy.LEGENDARY,100,3, EPotionSize.HIGH);
         Shield shield = new Shield("shield",EHierarchy.LEGENDARY,100);
         Weapon weapon = new Weapon("sword",EHierarchy.LEGENDARY,50);
@@ -27,7 +27,7 @@ public class Main {
         Armor armor2 = new Armor("armor",EHierarchy.LEGENDARY,40);
         Potion potion2 = new Potion("potion",EHierarchy.LEGENDARY,100,3, EPotionSize.HIGH);
         Shield shield2 = new Shield("shield",EHierarchy.LEGENDARY,100);
-        Weapon weapon2 = new Weapon("sword",EHierarchy.LEGENDARY,50);
+        Weapon weapon2 = new Weapon("sword",EHierarchy.LEGENDARY,50);*/
 
 
 //		int battlePosition; // 1 2 3
@@ -46,11 +46,11 @@ public class Main {
 //		Inventory<Armor> armors;//3 (rareza: bronce,plata,diamant)
 
         //creación de hero&enemy
-        Hero intellij = new Hero( );
+        /*Hero intellij = new Hero( );
         Enemy eclipse = new Enemy();
 
         //batalla , SÍ el enemigo es hostile(aunq la mayoria son hostiles por no decir el 100%)
-        Battle start_battle = new Battle(intellij,eclipse);
+        Battle start_battle = new Battle(intellij,eclipse);*/
 
 
 

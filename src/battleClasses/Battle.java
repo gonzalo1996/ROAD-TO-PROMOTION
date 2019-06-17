@@ -6,7 +6,7 @@ import enumerations.EBattleOptionChoosed;
 import enumerations.EBattlePosition;
 
 /**
- * @use Cuando el HERO entra en un RANGO determinado de un ENEMY. Instanciamos esta clase para empezar una BATTLE(con el mÃ©todo fight)
+ * @use Cuando el HERO entra en un RANGO determinado de un ENEMY. Instanciamos esta clase para empezar una BATTLE(con el metodo fight)
  */
 public class Battle {
 
@@ -57,9 +57,23 @@ public class Battle {
                 my_turn = !my_turn;
 
             } else if (my_turn == false) {
-                //TODO:crear método genenateAction() y combinarlo de alguna forma con .attack()
 
-                enemy.attack(hero);
+                EBattleOptionChoosed npc_election = enemy.generateBattleOptionChoose();
+
+                switch (npc_election){
+                    case ATTACK:
+                        enemy.attack(hero);
+                        break;
+                    case HEAL:
+                        enemy.getAPotionFromInventory();
+                        break;
+                    case MOVE_TO_ANOTHER_POSITION:
+                        //TODO: make a display of choose 2 alternative Position
+                        EBattlePosition newPosition = null; // = TODO: a method which displays 2 new positions.
+                        enemy.setBattlePosition( newPosition );
+                        break;
+                }
+
                 my_turn = !my_turn;
 
             }
@@ -70,29 +84,9 @@ public class Battle {
             System.out.println("ENEMY HAS BEEN DEFEATED");
         }else{
             //TODO: JFrame of "YOU LOSSE!" and send to HERO to the starting point of the game.
-            System.out.println("LOSSE!");
+            System.out.println("GAME OVER!");
         }
 
-    }
-
-    private boolean get_Battle_Action(EBattleOptionChoosed player_election){
-        boolean action_successful= false;
-
-        switch (player_election){
-            case ATTACK:
-
-                action_successful = true;
-                break;
-            case HEAL:
-
-                action_successful = true;
-                break;
-            case MOVE_TO_ANOTHER_POSITION:
-
-                action_successful = true;
-                break;
-        }
-        return action_successful;
     }
 
     //GETTERS AND SETTERS

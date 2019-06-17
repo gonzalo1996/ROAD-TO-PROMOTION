@@ -2,7 +2,7 @@ package classes;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import battleClasses.BattleStats;
+import enumerations.EBattleOptionChoosed;
 import enumerations.EBattlePosition;
 import inventaryClasses.*;
 
@@ -49,54 +49,29 @@ public class Enemy extends Player{
     }
 
     //TODO: se puede hacer que la clase sea estatica y asi no tiene que recibirla por parametro ?
-    public void generateAction(BattleStats bs){
-        int rta = 0;
-        rta = action(bs);
-        // 1 = curar , 2 = defender , 3 = equipar escudo , 4 = atacar , 5 = moverse
-        switch (rta){
+    public EBattleOptionChoosed generateBattleOptionChoose(){
+        EBattleOptionChoosed npc_election=null;
 
-            case 1:
-                setHp( getHp() + getAPotionFromInventory());
-                break;
-            case 2:
-                /*setDefense(getDefense() + getEquipment().getShieldInUse().use());*/
-                break;
-            case 3:
-               /* getEquipment().getShieldInUse().use();*/
-                break;
-            case 4:
-                /*attack(Hero );*/
-                break;
-            case 5:
-                //Se mueve de forma aleatoria de las 3 posibilades 
-                break;
+        if(1 == 1){
+            npc_election = EBattleOptionChoosed.ATTACK;
+        }else if(){
+            npc_election = EBattleOptionChoosed.HEAL;
+        }else if(){
+            npc_election = EBattleOptionChoosed.MOVE_TO_ANOTHER_POSITION;
         }
+        return npc_election;
     }
 
-    //TODO: se puede hacer que la clase sea estatica y asi no tiene que recibirla por parametro ?
-    public int action(BattleStats bs){
-        // 1 = curar , 2 = defender , 3 = equipar escudo , 4 = atacar , 5 = moverse
+    //TODO: mejorar este método para que cuando esté en la posicion 2, ó 3, pueda cambiar a la 1.
+    public EBattlePosition generateNewBattlePosition(){
+        EBattlePosition newBattlePosition=null;
 
-        int rta = 0;
-
-        //si ya perdio la mitad de la vida, intentara curarse de inmediato
-        if (getHp() < (bs.getOriginalEnemy().getHp())/2){
-            if(getInventory_elements().containsPotions()){
-                rta = 1;
-            }else{
-                if(equipment.getShieldInUse().getHp_shield()>0){
-                    rta = 2;
-                }else {
-                    if(getInventory_elements().containsShields()){
-                        rta = 3;
-                    }
-                }
-            }
-        }else {
-            rta = ThreadLocalRandom.current().nextInt(4, 6);
+        if(Random() && getBattlePosition() == EBattlePosition.FIRST_POSITION ){
+            newBattlePosition = EBattlePosition.SECOND_POSITION;
+        }else{
+            newBattlePosition = EBattlePosition.THIRD_POSITION;
         }
-
-        return rta;
+        return newBattlePosition;
     }
 
     public boolean isHostile() {
