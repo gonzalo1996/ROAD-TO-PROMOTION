@@ -62,35 +62,6 @@ public class Inventory<T extends Element> {
 
     }
 
-    /**
-     * te muestra un item aleatorio, y devuelve el indice
-     * @return -1 = no acepto el item, ans>0 acepto el item y este es su indice dentro del arreglo
-     */
-    public int showRandomItemToDrop (){
-        int ans = ThreadLocalRandom.current().nextInt(0, element_list.size());
-
-        //TODO: CAMBIAR POR SWING QUE NO SE COMO FUNCIONA jeje
-//        System.out.println("\nQuiere haceptar el item? y/n \n");
-//        scanner sc = new scanner(system.in);
-//        char c = sc.nextChar();
-//        if (c=="n"){
-//            ans == -1;
-//        }
-
-        return ans;
-    }
-
-    /**
-     * devuelve el elemento del inventario
-     * @param indexOfItem
-     * @return
-     */
-    public T dromItem(int indexOfItem) {
-        element_list.remove(indexOfItem);
-        return element_list.get(indexOfItem);
-    }
-
-
     //GETTERS & SETTERS
     public ArrayList<T> getElement_list() {
         return element_list;
@@ -99,8 +70,4 @@ public class Inventory<T extends Element> {
     public void setElement_list(ArrayList<T> element_list) {
         this.element_list = element_list;
     }
-		/*element_list.add();
-		element_list.remove();
-		element_list.contains();*/
-
 }

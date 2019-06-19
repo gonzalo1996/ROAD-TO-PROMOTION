@@ -53,10 +53,9 @@ public class Battle {
                         break;
                 }
 
-
                 my_turn = !my_turn;
 
-            } else if (my_turn == false) {
+            } else if (my_turn == false){
 
                 EBattleOptionChoosed npc_election = enemy.generateBattleOptionChoose();
 
@@ -69,8 +68,8 @@ public class Battle {
                         break;
                     case MOVE_TO_ANOTHER_POSITION:
 
-                        EBattlePosition newPosition = enemy.generateBattlePosition();
-                        enemy.setBattlePosition( newPosition );
+                        EBattlePosition newBattlePosition = enemy.generateBattlePosition();
+                        enemy.setBattlePosition( newBattlePosition );
                         break;
                 }
                 my_turn = !my_turn;

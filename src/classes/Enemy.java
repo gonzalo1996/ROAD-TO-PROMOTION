@@ -113,15 +113,15 @@ public class Enemy extends Player {
 
     }
 
-    //TODO: mejorar este método para que cuando esté en la posicion 2, ó 3, pueda cambiar a la 1.
-    public EBattlePosition generateNewBattlePosition() {
-        EBattlePosition newBattlePosition = null;
-        if (Random() && getBattlePosition() == EBattlePosition.FIRST_POSITION) {
-            newBattlePosition = EBattlePosition.SECOND_POSITION;
-        } else {
-            newBattlePosition = EBattlePosition.THIRD_POSITION;
-        }
-        return newBattlePosition;
+    public Element itemDrop(){
+        Element herosprize=null;
+
+        int qty_elements = getInventory_elements().getElement_list().size();
+        int random_number = (int)(Math.random()*qty_elements+1);
+
+        herosprize = getInventory_elements().getElement_list().get(random_number);
+
+        return herosprize;
     }
 
     public boolean isHostile() {
