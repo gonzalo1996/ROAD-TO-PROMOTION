@@ -19,7 +19,7 @@ public class Enemy extends Player {
     //habilidad del pj.
     private String ability;
 
-    public Enemy() {
+    public Enemy(int i, String dark_knight, int hp, int base_damage, int defense, int speed_reaction, double v, int exp, int level, Equipment equipEnemy, Inventory<Element> inventoryEnemy, String knight, String super_hp) {
         super();
         this.hostile = true;
         this.race = "";
