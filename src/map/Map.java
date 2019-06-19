@@ -3,7 +3,7 @@ package map;
 import classes.Enemy;
 import graphics.Sprite;
 import herramientas.CargadorRecursos;
-import sprites.HojaSprites;
+import graphics.SpriteSheet;
 
 import java.awt.*;
 import java.util.ArrayList;

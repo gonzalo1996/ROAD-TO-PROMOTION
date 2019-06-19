@@ -1,6 +1,6 @@
 package map;
 
-import principal.sprites.Sprite;
+import graphics.Sprite;
 
 import java.awt.*;
 
