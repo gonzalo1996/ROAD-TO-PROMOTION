@@ -47,6 +47,49 @@ public class Enemy extends Player {
 
     }
 
+    public EBattlePosition generateBattlePosition(){
+        EBattlePosition newBattlePosition= null;
+        boolean generated= false;
+
+        int random_number = (int)(Math.random()*2+1);
+
+        if( getBattlePosition() == EBattlePosition.FIRST_POSITION && !generated ){
+            switch (random_number){
+                case 1:
+                    newBattlePosition = EBattlePosition.SECOND_POSITION;
+                    break;
+                case 2:
+                    newBattlePosition = EBattlePosition.THIRD_POSITION;
+                    break;
+            }
+            generated = true;
+        }
+
+        if( getBattlePosition() == EBattlePosition.SECOND_POSITION && !generated ){
+            switch (random_number){
+                case 1:
+                    newBattlePosition = EBattlePosition.FIRST_POSITION;
+                    break;
+                case 2:
+                    newBattlePosition = EBattlePosition.THIRD_POSITION;
+                    break;
+            }
+            generated = true;
+        }
+
+        if( getBattlePosition() == EBattlePosition.THIRD_POSITION && !generated ){
+            switch (random_number){
+                case 1:
+                    newBattlePosition = EBattlePosition.FIRST_POSITION;
+                    break;
+                case 2:
+                    newBattlePosition = EBattlePosition.SECOND_POSITION;
+                    break;
+            }
+            generated = true;
+        }
+        return newBattlePosition;
+    }
     //TODO: se puede hacer que la clase sea estatica y asi no tiene que recibirla por parametro ?
 
     public EBattleOptionChoosed generateBattleOptionChoose() {

@@ -69,13 +69,11 @@ public class Battle {
                         break;
                     case MOVE_TO_ANOTHER_POSITION:
 
-                        EBattlePosition newPosition = null; // = TODO: generar nueva Posición para el NPC.
+                        EBattlePosition newPosition = enemy.generateBattlePosition();
                         enemy.setBattlePosition( newPosition );
                         break;
                 }
-
                 my_turn = !my_turn;
-
             }
         }
 
