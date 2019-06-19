@@ -1,3 +1,4 @@
+/*
 package map;
 
 import classes.Enemy;
@@ -330,3 +331,4 @@ public abstract class Map {
 }
 
 }
+*/

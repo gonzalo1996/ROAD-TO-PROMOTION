@@ -1,3 +1,4 @@
+/*
 package map;
 
 import principal.sprites.Sprite;
@@ -37,4 +38,4 @@ public class Tile {
     public Rectangle obtenerLimites(final int x, final int y) {
         return new Rectangle(x, y, sprite.obtenerAncho(), sprite.obtenerAlto());
     }
-}
+}*/

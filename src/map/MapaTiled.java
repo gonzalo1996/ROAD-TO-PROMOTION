@@ -1,3 +1,4 @@
+/*
 package map;
 
 import classes.Enemy;
@@ -412,4 +413,4 @@ public class MapaTiled {
 
         return new Rectangle(x, y, ancho, alto);
     }
-}
+}*/
