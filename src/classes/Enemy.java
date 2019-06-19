@@ -51,9 +51,8 @@ public class Enemy extends Player {
 
     public EBattleOptionChoosed generateBattleOptionChoose() {
         EBattleOptionChoosed npc_election = null;
-        Random posicion = new Random();
-        posicion.nextInt(2);
-        switch (posicion){
+        int numeroAleatorio = (int) (Math.random()*2+1);
+        switch (numeroAleatorio){
             case 0:
             //TODO: para curarse tiene que tener mas de la mitad de la vida
                 npc_election = EBattleOptionChoosed.HEAL;
@@ -67,6 +66,8 @@ public class Enemy extends Player {
                 npc_election = EBattleOptionChoosed.MOVE_TO_ANOTHER_POSITION;
                 break;
         }
+        return npc_election;
+
     }
 
     //TODO: mejorar este método para que cuando esté en la posicion 2, ó 3, pueda cambiar a la 1.

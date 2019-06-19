@@ -1,6 +1,5 @@
 package map;
 
-
 import classes.Enemy;
 import graphics.Sprite;
 import herramientas.CargadorRecursos;

@@ -3,6 +3,7 @@ package map;
 import classes.Enemy;
 import graphics.Sprite;
 import herramientas.CargadorRecursos;
+import sprites.HojaSprites;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -87,8 +88,8 @@ public abstract class Map {
 	}
 
 
-	private ArrayList<Enemigo> asignarEnemigos(final String informacionEnemigos) {
-		ArrayList<Enemigo> enemigos = new ArrayList<>();
+	private ArrayList<Enemy> asignarEnemigos(final String informacionEnemigos) {
+		ArrayList<Enemy> enemigos = new ArrayList<>();
 
 		String[] informacionEnemigosSeparada = informacionEnemigos.split("#");
 		for (int i = 0; i < informacionEnemigosSeparada.length; i++) {
@@ -96,7 +97,7 @@ public abstract class Map {
 			String[] coordenadas = informacionEnemigoActual[0].split(",");
 			String idEnemigo = informacionEnemigoActual[1];
 
-			Enemigo enemigo = RegistroEnemigos.obtenerEnemigo(Integer.parseInt(idEnemigo));
+			Enemy enemigo = RegistroEnemigos.obtenerEnemigo(Integer.parseInt(idEnemigo));
 			enemigo.establecerPosicion(Double.parseDouble(coordenadas[0]), Double.parseDouble(coordenadas[1]));
 			enemigos.add(enemigo);
 		}
