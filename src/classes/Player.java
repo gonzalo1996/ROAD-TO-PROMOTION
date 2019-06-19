@@ -129,7 +129,7 @@ public abstract class Player {
         double total_damage = 0;
 
         //la formula del daÃ±o
-        total_damage = (getBase_damage() + getSpeed_reaction()) * getCrit_rate() / getLevel();
+        total_damage = (getBase_damage() + getSpeed_reaction()) * 0.50 + (getBase_damage()*crit_rate);
 
         return total_damage;
     }
