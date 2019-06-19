@@ -2,6 +2,8 @@ package map;
 
 import principal.sprites.Sprite;
 
+import java.awt.*;
+
 public class Tile {
 
     private final Sprite sprite;
