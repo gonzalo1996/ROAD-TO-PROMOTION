@@ -13,6 +13,18 @@ import inventaryClasses.Weapon;
 public class Main {
 
     public static void main(String[] args) {
+        //TODO: crear armor, shield, weapon,potion
+
+        //TODO: ENEMY con su inventario(su inventario va a droppear items)
+
+        //TODO: HERO inicia peladisimo páh.
+
+        //TODO: guardar el progreso del HERO.(posición en el mapa, inventario, estadisticas).
+
+        //TODO: HERO colisiona con ENEMY y deben pelear(sí es que ENEMY hostil=true).
+        //TODO: CUANDO HERO MATE AL ENEMY, ENEMY hostil=false.
+
+        //TODO: CUANDO SE DERROTE AL FINAL BOSS HACER UN JPANEL QUE SE SUPERPONGA AL JUEGO Y TIRE UN "CONGRATULATION".
         //estos 4 elementos reciben los atributos de su super clase
 
         //nombre del elemento

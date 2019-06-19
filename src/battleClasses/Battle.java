@@ -38,7 +38,7 @@ public class Battle {
 
                 //TODO: seleccionar una accion a realizar con un clic.
 
-                EBattleOptionChoosed player_election=null; // = //TODO: a method from JFrame, a button choosed by an user.
+                EBattleOptionChoosed player_election=null; // = //TODO: from SWING, a button choosed by an user.
                 switch (player_election){
                     case ATTACK:
                         hero.attack(enemy);
@@ -68,8 +68,8 @@ public class Battle {
                         enemy.getAPotionFromInventory();
                         break;
                     case MOVE_TO_ANOTHER_POSITION:
-                        //TODO: make a display of choose 2 alternative Position
-                        EBattlePosition newPosition = null; // = TODO: a method which displays 2 new positions.
+
+                        EBattlePosition newPosition = null; // = TODO: generar nueva Posición para el NPC.
                         enemy.setBattlePosition( newPosition );
                         break;
                 }
