@@ -14,7 +14,7 @@ public class IOGenericFile {
      * @param <T> objeto que implementa la interfaz serializable.
      * @example
      */
-    public static <T extends Serializable> void escribirObjeto(T t, String file) {
+    public static <T extends Serializable> void writeObjet(T t, String file) {
 
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file))) {
 
@@ -31,7 +31,7 @@ public class IOGenericFile {
      * @return devuelve un objeto T de lo que se guardÃ³ en el archivo.
      */
     @SuppressWarnings("unchecked")
-    public static <T extends Serializable> T leerObjeto(String file) {
+    public static <T extends Serializable> T readObjeto(String file) {
 
         T t = null;
 
@@ -40,6 +40,7 @@ public class IOGenericFile {
             t = (T) in.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
+            //TODO: sacar este system.out.println
             System.out.println("No existe objeto correspondiente.");
         }
         return t;
