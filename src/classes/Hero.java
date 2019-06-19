@@ -8,9 +8,9 @@ public class Hero extends Player{
 
     private double especial_atack;
 
-    public Hero() {
+    public Hero(int i, String akkarin, int hp, int base_damage, int defense, int speed_reaction, double v, int exp, int level, Equipment equipHero, Inventory<Element> inventoryHero, int especial_atack) {
         super();
-        especial_atack=0;
+        this.especial_atack =0;
     }
 
     public Hero(Hero h){
@@ -88,4 +88,5 @@ public class Hero extends Player{
         }
         return flag;
     }
+
 }
