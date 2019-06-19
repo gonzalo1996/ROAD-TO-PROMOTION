@@ -88,4 +88,5 @@ public class Hero extends Player{
         }
         return flag;
     }
+
 }
