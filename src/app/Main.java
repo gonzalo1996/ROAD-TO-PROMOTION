@@ -1,18 +1,17 @@
 package app;
 
+import Exceptions.FullInventoryException;
 import classes.Enemy;
 import classes.Equipment;
 import classes.Hero;
-import enumerations.EBattlePosition;
 import enumerations.EHierarchy;
 import enumerations.EPotionSize;
-import battleClasses.Battle;
 import inventaryClasses.*;
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FullInventoryException {
         //TODO: crear armor, shield, weapon,potion
         Potion potion = new Potion("Heal Potion",EHierarchy.LEGENDARY,150,3, EPotionSize.HIGH);
         Potion potion1 = new Potion("Heal Potion",EHierarchy.EXOTIC,100,3, EPotionSize.MEDIUM);
@@ -35,18 +34,22 @@ public class Main {
         Armor armor3 = new Armor("Bronze Armor",EHierarchy.LEGENDARY,40);
 
         //TODO: EQUIPAMIENTO Actual
-        Equipment equipHero= new Equipment(weapon3,shield3,armor3);
-        Equipment equipEnemy= new Equipment(weapon2,shield2,armor2);
+        Equipment equipHero= new Equipment(weapon3,shield3,armor3,potion3);
+        Equipment equipEnemy= new Equipment(weapon2,shield2,armor2,potion2);
 
         //TODO: INVENTORY de ENEMY Y DE HERO
         Inventory<Element> inventoryEnemy = new Inventory<Element>();
         Inventory<Element> inventoryHero = new Inventory<Element>();
 
-        inventoryEnemy.addElement(potion2);
-        inventoryEnemy.addElement(shield2);
+        inventoryEnemy.addElement(weapon1);
+        inventoryEnemy.addElement(shield1);
+        inventoryEnemy.addElement(armor1);
+        inventoryEnemy.addElement(potion1);
 
-        inventoryHero.addElement(potion3);
-        inventoryHero.addElement(shield3);
+        inventoryEnemy.addElement(weapon);
+        inventoryEnemy.addElement(shield);
+        inventoryEnemy.addElement(armor);
+        inventoryEnemy.addElement(potion);
 
         //TODO: ENEMY con su inventario(su inventario va a droppear items)
 
@@ -67,11 +70,6 @@ public class Main {
 
         //TODO: CUANDO SE DERROTE AL FINAL BOSS HACER UN JPANEL QUE SE SUPERPONGA AL JUEGO Y TIRE UN "CONGRATULATION".
 
-
-        System.out.println(weapon.toString());
-        System.out.println(potion.toString());
-        System.out.println(shield.toString());
-        System.out.println(armor.toString());
     }
 
 }

@@ -65,25 +65,13 @@ public abstract class Player {
         setInventory_elements( p.getInventory_elements() );
     }
 
-
-    //NEW METHODS
-    /*
-    public double getAPotionFromInventory(){
-        double heal=0;
-
-        for(Element e: getInventory_elements().getElement_list() ){
-
-            if(e instanceof Potion){
-                Potion potion = (Potion)e;
-                heal = potion.use();
-
-                if( potion.getStock() == 0 ){
-                    getInventory_elements().removeElement( e );
-                }
-            }
+    public boolean hasPotion(){
+        boolean ans=false;
+        if( this.getEquipment().getPotionInUse() != null){
+            ans = true;
         }
-        return heal;
-    }*/
+        return ans;
+    }
 
     public boolean hasWeapon(){
         boolean ans=false;
@@ -117,7 +105,18 @@ public abstract class Player {
         return ans;
     }
 
-
+    public boolean heal(){
+        boolean healed=false;
+        if(hasPotion()){
+            Potion p = getEquipment().getPotionInUse();
+            p.use();
+            if( p.getStock() == 0 ){
+                getEquipment().potionOut();
+            }
+            healed = true;
+        }
+        return healed;
+    }
 
     public double calculate_damage_without_weapon(){
 
@@ -204,163 +203,24 @@ public abstract class Player {
 
     public abstract void attack(Player player_attacked);
 
-    public void equipWeapon(Weapon weaponToEquip){
-        equipment.setWeaponInUse(weaponToEquip);
+    public void equipWeapon(Weapon weaponToEquip) {
+        getEquipment().setWeaponInUse( weaponToEquip );
     }
 
     public void equipShield(Shield shieldToEquip) {
-        equipment.setShieldInUse(shieldToEquip);
+        getEquipment().setShieldInUse(shieldToEquip);
     }
 
     public void equipArmor(Armor armorToEquip) {
-        equipment.setArmorInUse(armorToEquip);
+        getEquipment().setArmorInUse(armorToEquip);
     }
 
-//        public abstract void attack(Player player_attacked){
-//        double total_damage=0;
-//
-//        if( hasWeapon() ){
-//            total_damage = calculate_damage_with_weapon();
-//        }else{
-//            total_damage = calculate_damage_without_weapon();
-//        }
-//
-//        player_attacked.receive_damage( total_damage );
-//    }
+    public void equipPotion(Potion potionToEquip) {
+        getEquipment().setPotionInUse(potionToEquip);
+    }
 
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //OLD METHODS
-//    public boolean isEnemy(){
-//        boolean flag=false;
-//        Player p = null;
-//        if(p instanceof Enemy){
-//            flag=true;
-//        }else{
-//            flag=false;
-//        }
-//        return flag;
-//    }
-//
-//    public double CalculateDamage() {
-//        double damage=0;
-//
-//        if( getBase_damage() != 0) {
-//
-//            damage= (double)((getBase_damage() + getSpeed_reaction()) * getCrit_rate() ) /getLevel();
-//
-//            if( this instanceof Hero && Random() ) {
-//                Hero hero = (Hero)this;
-//                damage= damage + hero.getEspecial_atack();
-//            }
-//        }
-//        return damage;
-//    }
-//    /** Autor Santiago
-//     *
-//     * @return
-//     */
-//    public void calculateDamageAditional() {
-//        double total=0;
-//        total= CalculateDamage() + getWeaponDamage();
-//        setBase_damage(total);
-//    }
-//
-//
-//    public void CalculateDefense(){
-//        double armor=0;
-//        int id=0;
-//        id= getEquipmentIdArmorInUse(.);
-//
-//        armor=getArmors().getElement(id).getHp_armor();
-//        if(armor != 0) {
-//            armor= armor + getHp_shield();
-//        }else{
-//            armor=getHp_shield();
-//        }
-//        setHp_shield(armor);
-//    }
-//
-//    //Metodo en el cual lo utilizaremos, para varias funciones
-//    public boolean Random() {
-//        boolean flag=false;
-//        int NumerRandom=0;
-//
-//        NumerRandom=(int) (Math.random() *9)+1;
-//        if(NumerRandom < 5) {
-//            flag=false;
-//        }else {
-//            flag=true;
-//        }
-//
-//        return flag;
-//    }
-//
-//
-//    /**
-//     * este "equipa" el arma que queremos usar en la batalla
-//     * @param idWeapon
-//     * @return true si se equipo, false sino
-//     */
-//    public boolean selectWeapon(int idWeapon) {
-//        boolean rta = false;
-//
-//        if (weapons.getKeys().contains(idWeapon)) {
-//            getWeweaponInUse = weapons.getElement(idWeapon);
-//            rta = true;
-//        }
-//
-//        return rta;
-//    }
-//
-//    /**
-//     * equipa el escudo a usar en batalla
-//     * @param idShield
-//     * @return
-//     */
-//    public boolean selectShield(int idShield) {
-//        boolean rta = false;
-//
-//        if (weapons.getKeys().contains(idShield)) {
-//            weaponInUse = weapons.getElement(idShield);
-//            rta = true;
-//        }
-//
-//        return rta;
-//    }
-//
-//
-//    /**
-//     * equipa la armadura a usar en batalla
-//     * @param idArmor
-//     * @return
-//     */
-//    public boolean selectArmor(int idArmor) {
-//        boolean rta = false;
-//
-//        if ( weapons.getKeys().contains(idArmor) ) {
-//            getEquipmentIdWeaponInUse().weaponInUse = weapons.getElement(idArmor);
-//            rta = true;
-//        }
-//        return rta;
-//    }
-//
-//    public double getWeaponDamage() {
-//        double damage=0;
-//        int id=0;
-//        id= getEquipmentIdWeaponInUse();
-//        damage= getWeapons().getElement(id).getAtk_value();
-//        return damage;
-//    }
-
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //GETTERS Y SETTERS
-
+    ////////////////////////////////////////////////////////////////
+    //GETTERS & SETTERS
 
     public EBattlePosition getBattlePosition() {
         return battlePosition;

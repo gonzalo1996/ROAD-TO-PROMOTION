@@ -17,6 +17,15 @@ public class Potion extends Element{
         this.potion_size = potion_size;
     }
 
+    public double use(){
+        reduce_stock();
+        return hp_recovery;
+    }
+
+    public double reduce_stock(){
+        return stock--;
+    }
+
     public int getHp_recovery() {
         return hp_recovery;
     }

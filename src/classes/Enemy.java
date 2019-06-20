@@ -90,8 +90,9 @@ public class Enemy extends Player {
         }
         return newBattlePosition;
     }
-    //TODO: se puede hacer que la clase sea estatica y asi no tiene que recibirla por parametro ?
 
+    //TODO: se puede hacer que la clase sea estatica y asi no tiene que recibirla por parametro ?
+    //no recibe nada por parametro. se usa en BATTLE.
     public EBattleOptionChoosed generateBattleOptionChoose() {
         EBattleOptionChoosed npc_election = null;
         int numeroAleatorio = (int) (Math.random()*2+1);
