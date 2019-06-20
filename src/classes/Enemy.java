@@ -19,11 +19,11 @@ public class Enemy extends Player {
     //habilidad del pj.
     private String ability;
 
-    public Enemy(int i, String dark_knight, int hp, int base_damage, int defense, int speed_reaction, double v, int exp, int level, Equipment equipEnemy, Inventory<Element> inventoryEnemy, String knight, String super_hp) {
-        super();
-        this.hostile = true;
-        this.race = "";
-        this.ability = "";
+    public Enemy(EBattlePosition battlePosition, String name, double hp, double base_damage, double defense, double speed_reaction, double crit_rate, double exp, int level, Equipment equipment, Inventory<Element> inventory_elements, boolean hostile, String race, String ability) {
+        super(battlePosition, name, hp, base_damage, defense, speed_reaction, crit_rate, exp, level, equipment, inventory_elements);
+        this.hostile = hostile;
+        this.race = race;
+        this.ability = ability;
     }
 
     public Enemy(EBattlePosition battlePosition, String name, double hp, double base_damage, double defense, double speed_reaction, float crit_rate, double exp, int level, Equipment equipment,

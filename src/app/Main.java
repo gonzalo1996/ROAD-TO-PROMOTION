@@ -4,6 +4,7 @@ import Exceptions.FullInventoryException;
 import classes.Enemy;
 import classes.Equipment;
 import classes.Hero;
+import enumerations.EBattlePosition;
 import enumerations.EHierarchy;
 import enumerations.EPotionSize;
 import inventaryClasses.*;
@@ -53,14 +54,11 @@ public class Main {
 
         //TODO: ENEMY con su inventario(su inventario va a droppear items)
 
-        Enemy enemy= new Enemy(1,"Dark Knight",500,100,140,50,1.1,110,10,equipEnemy,
-                inventoryEnemy,"Knight","Super Hp");
+        Enemy enemy= new Enemy(EBattlePosition.FIRST_POSITION,"Eclipse",250,150,70,70,1.5,0,1,equipEnemy,inventoryEnemy,false,"raza z","ser inferior a intellij");
 
         //TODO: HERO inicia peladisimo páh.
-        /*EBattlePosition battlePosition, String name, double hp, double base_damage, double defense,
-        double speed_reaction, float crit_rate, double exp, int level, Equipment equipment,
-         Inventory<Element> inventory_elements, double especial_atack*/
-        Hero hero= new Hero(1,"Akkarin",300,150,70,80,3.0,50,5,equipHero,inventoryHero,50);
+        Hero hero= new Hero(EBattlePosition.FIRST_POSITION,"IntellIj",250,150,70,70,1.5,0,1,equipHero,inventoryHero,50);
+
 
 
         //TODO: guardar el progreso del HERO.(posición en el mapa, inventario, estadisticas).
