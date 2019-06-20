@@ -8,7 +8,7 @@ import enumerations.EBattlePosition;
 import inventaryClasses.*;
 
 /**
- * Clase dedicada para la creaciÃ³n de multiples NPC's(Non-Player Computer)
+ * Clase dedicada para la creacion de multiples NPC's(Non-Player Computer)
  */
 public class Enemy extends Player {
 
@@ -43,10 +43,15 @@ public class Enemy extends Player {
     }
 
     @Override
-    public void attack(Player player_attacked) {
-
+    public void attack(Player player_attacked){
+        double total_damage = calculate_damage_with_weapon();
+        player_attacked.receive_damage( total_damage );
     }
 
+    /**
+     * Genera una nueva posicion de forma aleatoria omitiendo la posicion actual.
+     * @return EBattlePosition retorna la nueva posicion de ENEMY.
+     */
     public EBattlePosition generateBattlePosition(){
         EBattlePosition newBattlePosition= null;
         boolean generated= false;
@@ -93,6 +98,11 @@ public class Enemy extends Player {
 
     //TODO: se puede hacer que la clase sea estatica y asi no tiene que recibirla por parametro ?
     //no recibe nada por parametro. se usa en BATTLE.
+
+    /**
+     * Genera una accion de forma aleatoria.
+     * @return EBattleOptionChoosed genera una acción
+     */
     public EBattleOptionChoosed generateBattleOptionChoose() {
         EBattleOptionChoosed npc_election = null;
         int numeroAleatorio = (int) (Math.random()*2+1);
@@ -114,6 +124,10 @@ public class Enemy extends Player {
 
     }
 
+    /**
+     * devuelve un objeto del inventario de ENEMY
+     * @return Element retorna un elemento para HERO como recompenza
+     */
     public Element itemDrop(){
         Element herosprize=null;
 
