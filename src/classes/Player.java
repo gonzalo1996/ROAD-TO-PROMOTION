@@ -67,6 +67,7 @@ public abstract class Player {
 
 
     //NEW METHODS
+    /*
     public double getAPotionFromInventory(){
         double heal=0;
 
@@ -79,16 +80,10 @@ public abstract class Player {
                 if( potion.getStock() == 0 ){
                     getInventory_elements().removeElement( e );
                 }
-                /*
-                if(potion.getStock() >= 1){
-                    getInventory_elements().removeElement( e );
-                    getInventory_elements().addElement( potion );
-                }
-                */
             }
         }
         return heal;
-    }
+    }*/
 
     public boolean hasWeapon(){
         boolean ans=false;

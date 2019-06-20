@@ -44,7 +44,7 @@ public class Battle {
                         hero.attack(enemy);
                         break;
                     case HEAL:
-                        hero.getAPotionFromInventory();
+                        //hero.getAPotionFromInventory();
                         break;
                     case MOVE_TO_ANOTHER_POSITION:
                         //TODO: make a display of choose 2 alternative Position
@@ -64,7 +64,7 @@ public class Battle {
                         enemy.attack(hero);
                         break;
                     case HEAL:
-                        enemy.getAPotionFromInventory();
+                        //enemy.getAPotionFromInventory();
                         break;
                     case MOVE_TO_ANOTHER_POSITION:
 

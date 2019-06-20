@@ -22,7 +22,7 @@ public class Main {
         Shield shield = new Shield("Diamond Shield",EHierarchy.LEGENDARY,150);
         Shield shield1 = new Shield("Gold Shield",EHierarchy.EXOTIC,100);
         Shield shield2 = new Shield("Silver Shields",EHierarchy.PECULIAR,75);
-        Shield shield3 = new Shield("\n" + "Bronze shield",EHierarchy.SIMPLE,50);
+        Shield shield3 = new Shield("Bronze shield",EHierarchy.SIMPLE,50);
 
         Weapon weapon = new Weapon("Excalibur",EHierarchy.LEGENDARY,150);
         Weapon weapon1 = new Weapon("Gold Sword",EHierarchy.EXOTIC,100);
@@ -39,14 +39,12 @@ public class Main {
         Equipment equipEnemy= new Equipment(weapon2,shield2,armor2);
 
         //TODO: INVENTORY de ENEMY Y DE HERO
-        Inventory<Element> inventoryEnemy = new Inventory<>();
-        Inventory<Element> inventoryHero = new Inventory<>();
+        Inventory<Element> inventoryEnemy = new Inventory<Element>();
+        Inventory<Element> inventoryHero = new Inventory<Element>();
 
-        inventoryEnemy.addElement(potion2);
         inventoryEnemy.addElement(potion2);
         inventoryEnemy.addElement(shield2);
 
-        inventoryHero.addElement(potion3);
         inventoryHero.addElement(potion3);
         inventoryHero.addElement(shield3);
 

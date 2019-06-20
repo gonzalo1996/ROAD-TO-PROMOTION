@@ -27,11 +27,6 @@ public class Weapon extends Element{
     }
 
     @Override
-    public double use() {
-        return atk_value;
-    }
-
-    @Override
     public String toString() {
         String rta = super.toString()+"Ataque: "+ this.atk_value +"\n";
         return rta;

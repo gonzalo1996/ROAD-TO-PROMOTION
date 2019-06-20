@@ -29,11 +29,6 @@ public class Potion extends Element{
         stock++;
     }
 
-    @Override
-    public double use() {
-        stock--;
-        return hp_recovery;
-    }
 
     @Override
     public String toString() {

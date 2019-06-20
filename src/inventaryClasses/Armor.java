@@ -27,10 +27,6 @@ public class Armor extends Element{
     public double getHp_armor(){
         return hp_armor;
     }
-    @Override
-    public double use() {
-        return hp_armor;
-    }
 
     @Override
     public String toString() {

@@ -1,50 +1,56 @@
 package inventaryClasses;
 
 
+import Exceptions.FullInventoryException;
+
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Inventario en dÃ³nde se va a almacenar todos los ELEMENTOS.
- * @param <T>
+ * @param <T> receive Element objects only
  */
-public class Inventory<T extends Element> {
+public class Inventory<T extends Element>{
+    private final static int MAX_ELEMENTS=30;
     ArrayList<T> element_list;
 
-    /**
-     * Agrega un elemento al inventario.
-     * @param t
-     */
-    public boolean addElement(T t){
-        boolean ans = false;
+    public Inventory(){
+        element_list = new ArrayList<>(MAX_ELEMENTS);
+    }
 
-        if(!element_list.contains(t)){
+    public boolean addElement(T t)throws FullInventoryException {
+        boolean element_added = false;
+
+        if(element_list.size() < MAX_ELEMENTS){
             element_list.add(t);
-            ans = true;
+            element_added = true;
         }
-        return ans;
+
+        if(element_added == false){
+            //TODO: crear un JPanel que le comunique al usuario que el inventario está lleno.
+            throw new FullInventoryException("Inventory is full. Please delete an Element");
+        }
+
+        return element_added;
     }
 
     public boolean removeElement(T t){
-        boolean ans = false;
+        boolean element_removed = false;
         if(element_list.contains(t)) {
             element_list.remove(t);
-            ans = true;
+            element_removed = true;
         }
-        return ans;
+
+        return element_removed;
     }
 
     //TODO: ver si se puede hacer un solo metodo para los conteins
     public boolean containsPotions(){
         boolean rta=false;
-
-        for (T aux : element_list) {
+        for (T aux : element_list){
             if (aux instanceof Potion){
                 rta=true;
             }
         }
-
         return rta;
 
     }

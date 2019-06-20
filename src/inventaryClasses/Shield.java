@@ -28,10 +28,6 @@ public class Shield extends Element{
         return hp_shield;
     }
 
-    @Override
-    public double use() {
-        return hp_shield;
-    }
 
     @Override
     public String toString() {

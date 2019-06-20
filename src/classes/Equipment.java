@@ -2,6 +2,7 @@ package classes;
 
 
 import inventaryClasses.Armor;
+import inventaryClasses.Potion;
 import inventaryClasses.Shield;
 import inventaryClasses.Weapon;
 
@@ -13,11 +14,14 @@ public class Equipment {
     private Weapon weaponInUse;
     private Shield shieldInUse;
     private Armor armorInUse;
+    private Potion potionInUse;
 
-    public Equipment(Weapon weaponInUse, Shield shieldInUse, Armor armorInUse) {
+
+    public Equipment(Weapon weaponInUse, Shield shieldInUse, Armor armorInUse, Potion potionInUse) {
         this.weaponInUse = weaponInUse;
         this.shieldInUse = shieldInUse;
         this.armorInUse = armorInUse;
+        this.potionInUse = potionInUse;
     }
 
     public Weapon getWeaponInUse() {
@@ -50,5 +54,17 @@ public class Equipment {
 
     public void armorDestroyed(){
         setArmorInUse(null);
+    }
+
+    public void potionOut(){
+        setPotionInUse(null);
+    }
+
+    public Potion getPotionInUse() {
+        return potionInUse;
+    }
+
+    public void setPotionInUse(Potion potionInUse) {
+        this.potionInUse = potionInUse;
     }
 }

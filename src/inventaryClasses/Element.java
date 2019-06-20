@@ -1,10 +1,9 @@
 package inventaryClasses;
 
 
-import interfaces.IEquip;
 import enumerations.EHierarchy;
 
-public abstract class Element implements IEquip{
+public abstract class Element{
 
     private static int cantidad_elementos;
     private int id_numeroElemento;
@@ -49,21 +48,10 @@ public abstract class Element implements IEquip{
         return jerarquia;
     }
 
-    //	arreglar esta villeriada
-    @Override
-    public double use() {
-        return 0;
-    }
 
     @Override
     public String toString() {
         return "\nId: "+ id_numeroElemento +" Nombre: " + this.getName_of_element() + " Jerarquia: " + this.getJerarquia() + " ";
     }
-
-//	@Override
-//	public int getIdWeapon() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
 
 }
