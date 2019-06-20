@@ -36,7 +36,7 @@ public abstract class Player {
         inventory_elements = new Inventory<Element>();
     }
 
-    public Player(EBattlePosition battlePosition, String name, double hp, double base_damage, double defense, double speed_reaction, float crit_rate, double exp, int level, Equipment equipment, Inventory<Element> inventory_elements) {
+    public Player(EBattlePosition battlePosition, String name, double hp, double base_damage, double defense, double speed_reaction, double crit_rate, double exp, int level, Equipment equipment, Inventory<Element> inventory_elements) {
         setBattlePosition(battlePosition);
         setName(name);
         setHp(hp);
